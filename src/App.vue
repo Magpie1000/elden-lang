@@ -10,17 +10,20 @@
       </div>
       <the-nav-bar />
       <router-view />
+      <the-footer />
     </v-main>
   </v-app>
 </template>
 
 <script>
 import TheNavBar from "@/components/bars/TheNavBar.vue";
+import TheFooter from "./components/bars/TheFooter.vue";
 
 export default {
   name: "App",
   components: {
     TheNavBar,
+    TheFooter,
   },
   data: () => ({
     //
@@ -33,7 +36,7 @@ export default {
 
 #app {
   background-color: #272727 !important;
-  min-height: 150vh;
+  min-height: 140vh;
   font-family: Cinzel;
 }
 
