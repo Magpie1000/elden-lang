@@ -1,17 +1,24 @@
 <template>
-  <v-app class="justify-center">
-    <v-main class="main">
-      <the-nav-bar/>
-      <router-view/>
+  <v-app class="appMain">
+    <v-main class="main container">
+      <div class="backdrop">
+        <img
+          :src="`https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/UAnLUUMdxA9cow8TEe8IfhuC.png`"
+          class="backdrop-img"
+          alt="backdrop image"
+        />
+      </div>
+      <the-nav-bar />
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import TheNavBar from '@/components/bars/TheNavBar.vue'
+import TheNavBar from "@/components/bars/TheNavBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     TheNavBar,
   },
@@ -22,9 +29,48 @@ export default {
 </script>
 
 <style>
-main {
-  max-width: 1500px;
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap");
+
+#app {
+  background-color: #272727 !important;
+  min-height: 150vh;
+  font-family: Cinzel;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+.main {
+  max-width: 1500px;
+  height: 100vh;
+}
+
+.backdrop {
+  z-index: -1;
+  position: absolute;
+  margin-top: -9rem;
+  left: 0;
+  top: 0;
+  width: 100vw;
+}
+.backdrop-img {
+  width: 100%;
+}
+
+.appMain {
+  position: relative;
+  z-index: 1;
+}
+
+.appMain:after {
+  /* background-image:url(https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/UAnLUUMdxA9cow8TEe8IfhuC.png); */
+  /* top:0;
+    left:0;
+    position:absolute;
+    background-size:cover; */
+  /* opacity:0.5!important; */
+  /* mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); */
+  /* filter:alpha(opacity=50); */
+  /* z-index:-1;
+    content:"";
+    width:100%;
+    height:100vh; */
+}
 </style>

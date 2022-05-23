@@ -11,6 +11,21 @@ export default {
   name: 'Home',
   components: {
     Landing,
+  },
+  data: function () {
+    return {
+      windowWidth: null
+    }
+  },
+  methods: {
+    handleResize() {
+    this.windowWidth = window.innerWidth
+    if (this.windowWidth <= 768) {
+      this.trigger = false
+    } else {
+      this.trigger = true
+    }
+    },
   }
 }
 </script>
