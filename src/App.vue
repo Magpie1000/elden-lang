@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="justify-center">
     <v-main class="main">
       <the-nav-bar/>
       <router-view/>
@@ -21,8 +21,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 main {
   max-width: 1500px;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
 </style>
