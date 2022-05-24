@@ -82,7 +82,7 @@
       <v-card
         class="justify-center text-center py-5"
         min-height="300"
-        style="background-color: rgba(0, 0, 0, 0); color: white"
+        style="background-color: rgba(0, 0, 0, 1); color: white"
       >
         <v-row class="justify-center align-self-center pt-10">
           <v-card-title class="text-center" style="font-size: 40px">

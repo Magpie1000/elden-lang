@@ -5,7 +5,7 @@
         The Battle
       </h1>
       <h2 class="my-2">Introduction</h2>
-      <p class="text-start">
+      <p class="text-start noto">
         'Elden-lang' is esolang of 'Brainfxxk', programming language noted for
         its extreme minimalism. It was created in 1993 by Urban Müller.
         <br />

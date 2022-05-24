@@ -1,6 +1,7 @@
 <template>
   <v-row class="justify-center">
     <v-data-table
+      disable-sort
       :headers="headers"
       :items="languages"
       class="elevation-1"
@@ -23,12 +24,12 @@ export default {
           sortable: false,
           value: "name",
         },
-        { text: "Brainfxxk", value: "brainfuck" },
+        { text: "Brain-fxxk", value: "brainfuck" },
         { text: "meaning", value: "meaning" },
       ],
       languages: [
         {
-          name: "Dodge",
+          name: "roll",
           brainfuck: ">",
           meaning:
             "Increment the data pointer (to point to the next cell to the right).",
@@ -78,4 +79,30 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.v-data-table::v-deep th {
+  font-size: 22px !important;
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
+  text-align: center !important;
+}
+.v-data-table::v-deep td {
+  font-size: 16px !important;
+}
+
+.v-data-table::v-deep td:nth-child(1) {
+  font-size: 20px !important;
+  text-align: center !important;
+}
+
+.v-data-table::v-deep td:last-child {
+  font-size: 15px !important;
+  font-family: "Noto Sans";
+}
+
+.v-data-table::v-deep td:nth-child(2) {
+  font-size: 23px !important;
+  font-family: "Noto Sans";
+  text-align: center !important;
+}
+</style>
