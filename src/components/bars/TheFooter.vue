@@ -1,5 +1,9 @@
 <template>
-  <h1>Footer</h1>
+  <v-footer padless dark>
+    <v-col class="text-center pt-7" cols="12">
+      {{ new Date().getFullYear() }} <strong>Elden-lang</strong>
+    </v-col>
+  </v-footer>
 </template>
 
 <script>
