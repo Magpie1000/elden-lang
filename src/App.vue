@@ -38,6 +38,7 @@ export default {
   background-color: #272727 !important;
   min-height: 140vh;
   font-family: Cinzel;
+  line-height: 70%;
 }
 
 .main {

@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Fight from "../views/main/Fight.vue";
+import GoldenOrder from "../views/main/GoldenOrder.vue";
 
 Vue.use(VueRouter);
 
@@ -10,6 +12,17 @@ const routes = [
     name: "Home",
     component: Home,
   },
+  {
+    path: "/battle",
+    name: "Fight",
+    component: Fight,
+  },
+  {
+    path: "/goldenorder",
+    name: "GoldenOrder",
+    component: GoldenOrder,
+  },
+
   // {
   //   path: '/about',
   //   name: 'About',
