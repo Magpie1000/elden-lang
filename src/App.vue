@@ -7,6 +7,9 @@
           class="backdrop-img"
           alt="backdrop image"
         />
+        <div
+          style="background-color: rgba(0, 0, 0, 0.8); align-items: stretch"
+        ></div>
       </div>
       <the-nav-bar />
       <router-view />
@@ -36,7 +39,6 @@ export default {
 
 #app {
   background-color: #272727 !important;
-  min-height: 140vh;
   font-family: "Cinzel", serif;
   line-height: 70%;
 }

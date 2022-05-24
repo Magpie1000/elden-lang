@@ -22,8 +22,12 @@
         progaming langamage
       </v-card-text>
       <v-card-actions class="justify-center pt-8">
-        <v-btn x-large @click="$goToBattle()">Epic Boss Battle</v-btn>
-        <v-btn x-large @click="$goToGoldenOrder()">The Golden Order</v-btn>
+        <v-btn x-large @click="$goToBattle()">
+          Epic Boss Battle<br />(code)
+        </v-btn>
+        <v-btn x-large @click="$goToGoldenOrder()">
+          The Golden Order<br />(instructions)
+        </v-btn>
       </v-card-actions>
     </v-card>
     <div class="pt-10" style="background-color: rgba(0, 0, 0, 0.5)">
@@ -34,8 +38,8 @@
       >
         <v-row class="justify-center align-self-center">
           <v-card-title class="mr-10" style="font-size: 40px">
-            Need an<br />
-            epic bossfight?
+            want epic <br />
+            boss battles?
           </v-card-title>
           <v-card
             min-height="200"
@@ -57,7 +61,8 @@
             img="https://img-9gag-fun.9cache.com/photo/arGv6B0_460s.jpg"
           ></v-card>
           <v-card-title style="font-size: 40px">
-            Have to fight <br />against bugs?
+            Have to<br />
+            fix bugs?
           </v-card-title>
         </v-row>
       </v-card>
@@ -86,7 +91,12 @@
       >
         <v-row class="justify-center align-self-center pt-10">
           <v-card-title class="text-center" style="font-size: 40px">
-            Life is TOO short.<br />
+            do it all at once!<br />
+          </v-card-title>
+        </v-row>
+        <v-row class="justify-center align-self-center pt-5">
+          <v-card-title class="text-center" style="font-size: 40px">
+            with<br />
           </v-card-title>
         </v-row>
         <v-row class="justify-center align-self-center pt-10">
@@ -94,9 +104,10 @@
             class="text-center"
             style="font-size: 60px; color: #dcbf72"
           >
-            You need 'Elden-Lang'.
+            'Elden-Lang'.
           </v-card-title>
         </v-row>
+
         <v-btn x-large class="align-self-center mt-15 mb-10"
           >Fight Against demigods</v-btn
         >
