@@ -1,5 +1,5 @@
 <template>
-  <div class="Fight text-center" style="min-height: 100vh">
+  <div class="Battle text-center" style="min-height: 100vh">
     <v-container class="mt-10" style="background-color: rgba(0, 0, 0, 0.8)">
       <h1 class="py-10 my-10" style="font-size: 80px; font-weight: 600">
         The Battle
@@ -18,12 +18,12 @@
 
 <script>
 export default {
-  name: "Fight",
+  name: "Battle",
 };
 </script>
 
 <style>
-.Fight {
+.Battle {
   color: aliceblue;
 }
 </style>

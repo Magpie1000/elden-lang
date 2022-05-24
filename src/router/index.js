@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Fight from "../views/main/Fight.vue";
+import Battle from "../views/main/Battle.vue";
 import GoldenOrder from "../views/main/GoldenOrder.vue";
 
 Vue.use(VueRouter);
@@ -14,8 +14,8 @@ const routes = [
   },
   {
     path: "/battle",
-    name: "Fight",
-    component: Fight,
+    name: "Battle",
+    component: Battle,
   },
   {
     path: "/goldenorder",

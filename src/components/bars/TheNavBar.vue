@@ -15,7 +15,7 @@
         Logo
       </v-toolbar-title>
       <v-spacer />
-      <v-btn text :to="{ name: 'Fight' }" style="font-family: Cinzel"
+      <v-btn text :to="{ name: 'Battle' }" style="font-family: Cinzel"
         >Fight</v-btn
       >
       <v-btn text :to="{ name: 'GoldenOrder' }" style="font-family: Cinzel"

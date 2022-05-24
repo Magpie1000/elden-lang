@@ -22,7 +22,7 @@
         progaming langamage
       </v-card-text>
       <v-card-actions class="justify-center pt-8">
-        <v-btn x-large @click="$goToFight()">Epic Boss Fight</v-btn>
+        <v-btn x-large @click="$goToBattle()">Epic Boss Battle</v-btn>
         <v-btn x-large @click="$goToGoldenOrder()">The Golden Order</v-btn>
       </v-card-actions>
     </v-card>
@@ -69,8 +69,7 @@
         <v-row class="justify-center align-self-center">
           <v-card-title class="mr-10" style="font-size: 40px">
             Code with<br />
-            something <br />
-            special?
+            Gamepad?
           </v-card-title>
           <v-card
             min-height="200"

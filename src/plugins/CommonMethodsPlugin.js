@@ -4,8 +4,8 @@ MyPlugin.install = function (Vue) {
     this.$router.push({ name: "Home" });
   };
 
-  Vue.prototype.$goToFight = function () {
-    this.$router.push({ name: "Fight" });
+  Vue.prototype.$goToBattle = function () {
+    this.$router.push({ name: "Battle" });
   };
 
   Vue.prototype.$goToGoldenOrder = function () {

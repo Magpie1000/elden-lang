@@ -1,6 +1,9 @@
 <template>
   <div class="TheGoldenOrder text-center" style="min-height: 100vh">
-    <v-container class="mt-10" style="background-color: rgba(0, 0, 0, 0.8)">
+    <v-container
+      class="mt-10 pb-15"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+    >
       <h1 class="py-10 my-10" style="font-size: 80px; font-weight: 600">
         The Golden Order
       </h1>
@@ -11,8 +14,10 @@
         <br />
         You can code with 8 basic moves of elden-ring. Here's a table for you.
       </p>
-      <h2>1. Start with your favorite Boss name</h2>
-      <golden-order-table />
+      <h2 class="mt-15">translation table</h2>
+
+      <golden-order-table class="my-5" />
+      <h2 class="mt-15">examples</h2>
     </v-container>
   </div>
 </template>
