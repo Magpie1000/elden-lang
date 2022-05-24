@@ -32,13 +32,18 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 #app {
   background-color: #272727 !important;
   min-height: 140vh;
-  font-family: Cinzel;
+  font-family: "Cinzel", serif;
   line-height: 70%;
+}
+
+.noto {
+  font-family: "Noto Sans KR", sans-serif !important;
+  line-height: 110%;
 }
 
 .main {
