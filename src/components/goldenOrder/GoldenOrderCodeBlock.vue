@@ -5,7 +5,6 @@
       style="font-size: 22px; font-weight: 200"
       v-html="lineBreakedText"
     >
-      <!-- {{ lineBreakedText }} -->
     </v-card-text>
   </v-card>
 </template>
@@ -15,21 +14,11 @@ export default {
   name: "GoldenOrderCodeBlock",
   props: ["text"],
   data: () => ({}),
-  methods: {
-    breakLine(string) {
-      return string.replace(/(?:\r\n|\r|\n)/g, "<br />");
-    },
-    logText() {
-      console.log(this.text);
-    },
-  },
+  methods: {},
   computed: {
     lineBreakedText: function () {
-      return this.breakLine(this.text);
+      return this.$breakLine(this.text);
     },
-  },
-  created() {
-    console.log(this.text, "받은 텍스트");
   },
 };
 </script>

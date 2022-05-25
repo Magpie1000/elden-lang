@@ -1,5 +1,6 @@
 const MyPlugin = {};
 MyPlugin.install = function (Vue) {
+  // 1. routes
   Vue.prototype.$goToHome = function () {
     this.$router.push({ name: "Home" });
   };
@@ -10,6 +11,10 @@ MyPlugin.install = function (Vue) {
 
   Vue.prototype.$goToGoldenOrder = function () {
     this.$router.push({ name: "GoldenOrder" });
+  };
+  // 2. send html as props
+  Vue.prototype.$breakLine = function (string) {
+    return string.replace(/(?:\r\n|\r|\n)/g, "<br />");
   };
 
   // Vue.prototype.$goToCollectionDetail = function (collection_pk) {
