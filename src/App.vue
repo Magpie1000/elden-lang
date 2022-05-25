@@ -52,8 +52,8 @@ export default {
 }
 
 .main {
-  max-width: 1500px;
-  height: 100vh;
+  /* max-width: 1500px; */
+  /* height: 100vh; */
 }
 
 .appMain {
