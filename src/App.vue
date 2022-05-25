@@ -1,16 +1,7 @@
 <template>
   <v-app class="appMain">
     <v-main class="main container">
-      <div class="backdrop">
-        <img
-          :src="`https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/UAnLUUMdxA9cow8TEe8IfhuC.png`"
-          class="backdrop-img"
-          alt="backdrop image"
-        />
-        <div
-          style="background-color: rgba(0, 0, 0, 0.8); align-items: stretch"
-        ></div>
-      </div>
+      <the-backdrop />
       <the-nav-bar />
       <router-view />
       <the-footer />
@@ -20,13 +11,15 @@
 
 <script>
 import TheNavBar from "@/components/bars/TheNavBar.vue";
-import TheFooter from "./components/bars/TheFooter.vue";
+import TheFooter from "@/components/bars/TheFooter.vue";
+import TheBackdrop from "@/components/main/TheBackdrop.vue";
 
 export default {
   name: "App",
   components: {
     TheNavBar,
     TheFooter,
+    TheBackdrop,
   },
   data: () => ({}),
 };
@@ -61,18 +54,6 @@ export default {
 .main {
   max-width: 1500px;
   height: 100vh;
-}
-
-.backdrop {
-  z-index: -1;
-  position: absolute;
-  margin-top: -9rem;
-  left: 0;
-  top: 0;
-  width: 100vw;
-}
-.backdrop-img {
-  width: 100%;
 }
 
 .appMain {
