@@ -1,7 +1,7 @@
 <template>
-  <v-card dark justify="center" min-width="500px" max-width="600px">
+  <v-card dark justify="center" min-width="400px" max-width="600px">
     <v-card-text
-      class="cousine text-start"
+      class="cousine text-start ma-4"
       style="font-size: 22px; font-weight: 200"
       v-html="lineBreakedText"
     >

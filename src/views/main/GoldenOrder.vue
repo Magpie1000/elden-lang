@@ -4,15 +4,13 @@
       class="mt-10 pb-15"
       style="background-color: rgba(0, 0, 0, 0.8); border-radius: 1rem"
     >
-      <h1 class="py-10 my-15" style="font-size: 80px; font-weight: 600">
-        The Golden Order
-      </h1>
-      <h2 class="my-2 subtitle">Introduction</h2>
+      <h1 class="title-text pt-10 mt-15">The Golden Order</h1>
+      <h2 class="subtitle-text">a.k.a documentation</h2>
+      <v-divider dark class="my-9 mx-15" />
+
+      <h2 class="heading-text my-10">Introduction</h2>
       <v-row class="mt-5" justify="center">
-        <p
-          class="noto text-start"
-          style="max-width: 800px; font-size: 22px; font-weight: 200"
-        >
+        <p class="noto text-start main-text">
           'Elden-Lang' is esolang of 'Brainfxxk', programming language noted for
           its extreme minimalism and was created in 1993 by Urban Müller. You
           can literally program everything with simple 8 letters.
@@ -25,49 +23,44 @@
           <br />
         </p>
       </v-row>
-      <h2 class="mt-15">translation table</h2>
+
+      <h2 class="heading-text mt-15">translation table</h2>
       <golden-order-table class="my-5" />
 
-      <v-container justify-content="center" style="max-width: 800px">
-        <h2 class="mt-15">The Golden Order</h2>
-        <h3 class="mt-5">(a.k.a how to code)</h3>
+      <v-divider dark class="my-9 mx-15" />
 
-        <h3 class="mt-15">1. Type a pair of curly brackets</h3>
+      <v-container justify-content="center" style="max-width: 800px">
+        <h2 class="subtitle-text mt-15">The Golden Order</h2>
+        <h3 class="heading-text mt-1">(a.k.a how to code)</h3>
+        <v-divider dark class="my-9 mx-15" />
+        <h3 class="subheading-text mt-15">Basic Rules</h3>
+        <v-row justify="center" class="mt-5">
+          <p class="main-text noto text-start">
+            1. 'Elden-lang' is case-insensitive. <br />
+            2. 'Elden-lang' ignores every codes but 8 reserved words.<br />
+          </p>
+        </v-row>
+        <v-divider dark class="my-9 mx-15" />
+        <h3 class="subheading-text mt-15">1. Type a pair of curly brackets</h3>
         <v-row justify="center" class="mt-5">
           <GoldenOrderCodeBlock :text="`{}`" />
         </v-row>
-
-        <h3 class="mt-15">2. Choose your enemy.</h3>
+        <v-divider dark class="my-9 mx-15" />
+        <h3 class="subheading-text mt-15">2. Choose your enemy.</h3>
         <v-row class="mt-5" justify="center">
-          <p
-            class="noto text-start"
-            style="max-width: 800px; font-size: 22px; font-weight: 200"
-          >
+          <p class="main-text noto text-start">
             Put it in front of your brackets. <br />
             Your code is going to look like this.<br />
           </p>
         </v-row>
         <v-row class="mt-5" justify="center">
-          <GoldenOrderCodeBlock :text="`Taurus demon {}`" />
+          <GoldenOrderCodeBlock :text="`Magma Wyrm {}`" />
         </v-row>
-        <v-row class="mt-5" justify="center">
-          <p
-            class="noto text-start"
-            style="max-width: 800px; font-size: 22px; font-weight: 200"
-          >
-            Here are some suggestions for you.<br />
-            <br />
-            1. Prowling Magus and Congregation <br />
-            2. Covetous Demon <br />
-          </p>
-        </v-row>
+        <v-divider dark class="my-9 mx-15" />
 
-        <h3 class="mt-15">3. Determine your destiny.</h3>
+        <h3 class="subheading-text mt-15">3. Determine your destiny.</h3>
         <v-row class="mt-5" justify="center">
-          <p
-            class="noto text-start"
-            style="max-width: 800px; font-size: 22px; font-weight: 200"
-          >
+          <p class="main-text noto text-start">
             There are 3 options available. <br />Put one of them after the
             brackets.<br />
             <br />
@@ -77,38 +70,37 @@
           </p>
         </v-row>
         <v-row class="mt-5" justify="center">
-          <GoldenOrderCodeBlock :text="`Taurus demon {\n } Enemy felled.`" />
+          <GoldenOrderCodeBlock :text="`Magma Wyrm {\n } ENEMY FELLED.`" />
         </v-row>
-
-        <h3 class="mt-15">4. Enjoy</h3>
+        <v-divider dark class="my-9 mx-15" />
+        <h3 class="subheading-text mt-15">4. Enjoy</h3>
         <v-row class="mt-5" justify="center">
           <GoldenOrderCodeBlock
-            :text="`Taurus demon { \n\n ROLL ROLL ROLL \n SPAM R1 \n PANIC ROLL \n\n} Enemy felled.`"
+            :text="`Magma Wyrm { \n\n ROLL ROLL ROLL \n SPAM R1 \n PANIC ROLL \n\n} ENEMY FELLED.`"
           />
         </v-row>
-
-        <h3 class="mt-15">5. Be creative.</h3>
+        <v-divider dark class="my-9 mx-15" />
+        <h3 class="subheading-text mt-15">5. Be creative.</h3>
         <v-row class="mt-5" justify="center">
-          <p
-            class="noto text-start"
-            style="max-width: 800px; font-size: 22px; font-weight: 200"
-          >
-            Elden-Lang automatically ignores other code but 8 reserved words.
-            <br />
-            So be creative. Use your imagination. Make your battle epic.
+          <p class="noto text-start main-text">
+            Elden-Lang automatically ignores other code but 8 reserved words. So
+            BE CREATIVE! Use your imagination. Make your battle epic.
             <br /><br />
             This does exact same job that the previous code does.
           </p>
         </v-row>
         <v-row class="mt-5" justify="center">
           <GoldenOrderCodeBlock
-            :text="`Taurus demon { \n\n CAST IRON BODY \n CAST FIREBALL \n SUMMON JELLYFISH \n 
-            ROLL ROLL ROLL \n SPAM R1 \n PANIC ROLL \n\n} Enemy felled.`"
+            :text="`Magma Wyrm { \n\n CAST IRON BODY \n CAST FIREBALL \n SUMMON JELLYFISH \n 
+            ROLL ROLL ROLL \n SPAM R1 \n PANIC ROLL \n\n} ENEMY FELLED.`"
           />
         </v-row>
-
-        <h2 class="mt-15">examples</h2>
       </v-container>
+      <v-divider dark class="my-9 mx-15" />
+      <h2 class="subtitle-text mt-15">examples</h2>
+      <h3 class="subheading-text mt-15">
+        1. The classic 'Hello, world' sample
+      </h3>
     </v-container>
   </div>
 </template>
@@ -128,11 +120,31 @@ export default {
 </script>
 
 <style scoped>
-.TheGoldenOrder {
+.subtitle-text {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.heading-text {
+  font-size: 35px;
+  font-weight: 600;
   color: aliceblue;
 }
 
-/* .subtitle {
-  font-size: "30px" !important; */
-/* } */
+.subheading-text {
+  font-size: 25px;
+  font-weight: 450;
+  color: aliceblue;
+}
+
+.main-text {
+  max-width: 580px;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 140%;
+}
+
+.TheGoldenOrder {
+  color: aliceblue;
+}
 </style>

@@ -3,7 +3,7 @@
     <v-card
       style="background-color: rgba(0, 0, 0, 0.8)"
       class="text-center py-10 align-center"
-      min-height="450"
+      min-height="550"
     >
       <v-card-title class="justify-center pt-15 mt-5 mb-10 title-text"
         >Elden-Lang</v-card-title
@@ -15,12 +15,15 @@
         progaming langamage
       </v-card-text>
       <v-card-actions class="justify-center pt-8">
-        <v-btn x-large @click="$goToBattle()">
-          Epic Boss Battle<br />(code)
-        </v-btn>
-        <v-btn x-large @click="$goToGoldenOrder()">
-          The Golden Order<br />(documentation)
-        </v-btn>
+        <default-btn
+          class="mr-10"
+          @click.native="$goToBattle()"
+          text="Epic boss battle<br />(Code)"
+        />
+        <default-btn
+          @click.native="$goToGoldenOrder()"
+          text="The Golden Order<br />(documentation)"
+        />
       </v-card-actions>
     </v-card>
     <!--  -->
@@ -45,10 +48,10 @@
       <!-- 엘든-랭  -->
       <v-card
         class="justify-center text-center py-5"
-        min-height="300"
+        min-height="500"
         style="background-color: rgba(0, 0, 0, 1); color: white"
       >
-        <v-row class="justify-center align-self-center pt-10">
+        <v-row class="justify-center align-self-center mt-5 pt-10">
           <v-card-title class="text-center" style="font-size: 40px">
             do it all at once!<br />
           </v-card-title>
@@ -59,10 +62,7 @@
           </v-card-title>
         </v-row>
         <v-row class="justify-center align-self-center pt-10">
-          <v-card-title
-            class="text-center"
-            style="font-size: 60px; color: #dcbf72"
-          >
+          <v-card-title class="text-center title-text">
             'Elden-Lang'.
           </v-card-title>
         </v-row>
@@ -76,8 +76,10 @@
 
 <script>
 import LandingInfoCard from "../../components/main/landing/LandingInfoCard.vue";
+import DefaultBtn from "@/components/commons/DefaultBtn.vue";
+
 export default {
-  components: { LandingInfoCard },
+  components: { LandingInfoCard, DefaultBtn },
   name: "Landing",
 };
 </script>
