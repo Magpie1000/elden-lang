@@ -61,4 +61,4 @@ Brainfuck.prototype.run = function (instructions) {
 
 Brainfuck.prototype.read = function () {};
 
-Brainfuck.prototype.write = function (data) {};
+export default Brainfuck;
