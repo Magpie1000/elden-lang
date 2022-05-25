@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: "*",
-    redirect: (to) => {
+    redirect: () => {
       return { name: "Home" };
     },
   },
