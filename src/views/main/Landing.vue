@@ -19,64 +19,30 @@
           Epic Boss Battle<br />(code)
         </v-btn>
         <v-btn x-large @click="$goToGoldenOrder()">
-          The Golden Order<br />(instructions)
+          The Golden Order<br />(documentation)
         </v-btn>
       </v-card-actions>
     </v-card>
+    <!--  -->
     <div class="pt-10" style="background-color: rgba(0, 0, 0, 0.5)">
-      <v-card
-        class="justify-center py-5"
-        min-height="300"
-        style="background-color: rgba(0, 0, 0, 0); color: white"
-      >
-        <v-row class="justify-center align-self-center">
-          <v-card-title class="mr-10" style="font-size: 40px">
-            want epic <br />
-            boss battles?
-          </v-card-title>
-          <v-card
-            min-height="200"
-            min-width="300"
-            img="https://dcimg4.dcinside.co.kr/viewimage.php?id=2bafdf2bf6dd3eb279bec4b0&no=24b0d769e1d32ca73feb80fa11d028315f52e6e1fc8bbd14245a9b9fd2ad519786299874f0e5852dcefd12920eb4d3a3e503cc024c392ab9d40807186b803f15d95b2e70dd67e7"
-          ></v-card>
-        </v-row>
-      </v-card>
-      <v-card
-        class="justify-center py-5"
-        min-height="300"
-        style="background-color: rgba(0, 0, 0, 0); color: white"
-      >
-        <v-row class="justify-center align-self-center pt-10">
-          <v-card
-            class="mr-10"
-            min-height="200"
-            min-width="300"
-            img="https://img-9gag-fun.9cache.com/photo/arGv6B0_460s.jpg"
-          ></v-card>
-          <v-card-title style="font-size: 40px">
-            Have to<br />
-            fix bugs?
-          </v-card-title>
-        </v-row>
-      </v-card>
-      <v-card
-        class="justify-center py-5"
-        min-height="300"
-        style="background-color: rgba(0, 0, 0, 0); color: white"
-      >
-        <v-row class="justify-center align-self-center">
-          <v-card-title class="mr-10" style="font-size: 40px">
-            Code with<br />
-            Gamepad?
-          </v-card-title>
-          <v-card
-            min-height="200"
-            min-width="300"
-            img="https://cdn-icons-png.flaticon.com/512/626/626540.png"
-          ></v-card>
-        </v-row>
-      </v-card>
-
+      <v-container>
+        <landing-info-card
+          :title="`want epic \n boss battles?`"
+          :isLefty="true"
+          :imgUrl="`https://dcimg4.dcinside.co.kr/viewimage.php?id=2bafdf2bf6dd3eb279bec4b0&no=24b0d769e1d32ca73feb80fa11d028315f52e6e1fc8bbd14245a9b9fd2ad519786299874f0e5852dcefd12920eb4d3a3e503cc024c392ab9d40807186b803f15d95b2e70dd67e7`"
+        />
+        <landing-info-card
+          :title="`dealing\n with bugs?`"
+          :isLefty="false"
+          :imgUrl="`https://img-9gag-fun.9cache.com/photo/arGv6B0_460s.jpg`"
+        />
+        <landing-info-card
+          :title="`code with \n gamepad?`"
+          :isLefty="true"
+          :imgUrl="`https://cdn-icons-png.flaticon.com/512/626/626540.png`"
+        />
+      </v-container>
+      <!-- 엘든-랭  -->
       <v-card
         class="justify-center text-center py-5"
         min-height="300"
@@ -100,7 +66,6 @@
             'Elden-Lang'.
           </v-card-title>
         </v-row>
-
         <v-btn x-large class="align-self-center mt-15 mb-10"
           >Fight Against demigods</v-btn
         >
@@ -110,27 +75,9 @@
 </template>
 
 <script>
+import LandingInfoCard from "../../components/main/landing/LandingInfoCard.vue";
 export default {
+  components: { LandingInfoCard },
   name: "Landing",
 };
 </script>
-
-<style>
-.backdrop {
-  z-index: -1;
-  position: absolute;
-  margin-top: -9rem;
-  margin-left: -5rem;
-  left: 0;
-  top: 0;
-  width: 115vw;
-}
-.backdrop-img {
-  mask-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.852) 60%
-  );
-  width: 100%;
-}
-</style>
