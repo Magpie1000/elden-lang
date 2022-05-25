@@ -5,14 +5,7 @@
       class="text-center py-10 align-center"
       min-height="450"
     >
-      <v-card-title
-        class="justify-center pt-15 mt-5 mb-10"
-        style="
-          font-family: Cinzel;
-          font-size: 80px;
-          font-weight: 600;
-          color: #dcbf72;
-        "
+      <v-card-title class="justify-center pt-15 mt-5 mb-10 title-text"
         >Elden-Lang</v-card-title
       >
       <v-card-text

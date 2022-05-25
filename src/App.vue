@@ -28,19 +28,29 @@ export default {
     TheNavBar,
     TheFooter,
   },
-  data: () => ({
-    //
-  }),
+  data: () => ({}),
 };
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cousine&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 #app {
   background-color: #272727 !important;
   font-family: "Cinzel", serif;
-  line-height: 70%;
+  /* line-height: 70%; */
+}
+
+.title-text {
+  font-family: "Cinzel";
+  font-size: 80px !important;
+  font-weight: 600 !important;
+  color: #dcbf72 !important;
+}
+
+.cousine {
+  font-family: "Cousine", monospace !important;
+  line-height: 110%;
 }
 
 .noto {
@@ -68,20 +78,5 @@ export default {
 .appMain {
   position: relative;
   z-index: 1;
-}
-
-.appMain:after {
-  /* background-image:url(https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/UAnLUUMdxA9cow8TEe8IfhuC.png); */
-  /* top:0;
-    left:0;
-    position:absolute;
-    background-size:cover; */
-  /* opacity:0.5!important; */
-  /* mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); */
-  /* filter:alpha(opacity=50); */
-  /* z-index:-1;
-    content:"";
-    width:100%;
-    height:100vh; */
 }
 </style>
