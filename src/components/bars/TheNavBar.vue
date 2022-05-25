@@ -10,10 +10,16 @@
     >
       <v-toolbar-title
         class="font-weight-medium"
-        style="font-family: Cinzel; font-size: 40px; cursor: pointer"
+        style="
+          font-family: Cinzel;
+          font-size: 40px;
+          cursor: pointer;
+          color: #dcbf72;
+          font-weight: 1000 !important;
+        "
         @click="$goToHome()"
       >
-        Logo
+        EL
       </v-toolbar-title>
       <v-spacer />
       <v-btn
