@@ -34,9 +34,9 @@ export default {
   computed: {
     leftMargin: function () {
       if (this.windowWidth > 1500) {
-        return 16;
+        return 15;
       }
-      return 7;
+      return 6;
     },
   },
 };
