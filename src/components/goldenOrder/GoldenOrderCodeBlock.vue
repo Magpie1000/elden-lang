@@ -1,8 +1,8 @@
 <template>
   <v-card dark justify="center" min-width="400px" max-width="600px">
     <v-card-text
-      class="cousine text-start ma-4"
-      style="font-size: 22px; font-weight: 200"
+      class="text-start ma-4"
+      style="font-size: 22px; font-weight: 200; line-height: 120%"
       v-html="lineBreakedText"
     >
     </v-card-text>
