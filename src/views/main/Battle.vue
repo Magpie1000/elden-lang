@@ -8,6 +8,7 @@
       <h2 class="subtitle-text">a.k.a code</h2>
       <v-row class="my-10" justify="center">
         <default-btn class="mr-5" text="LOAD EXAMPLES" />
+        <!-- <default-btn @click.native.stop="open = true" text="COMMANDS" /> -->
         <default-btn @click.native.stop="dialog = true" text="COMMANDS" />
       </v-row>
 
@@ -39,7 +40,7 @@ import Brainfuck from "../../plugins/brainfuck.js";
 import DefaultBtn from "@/components/commons/DefaultBtn.vue";
 import GoldenOrderTable from "@/components/goldenOrder/GoldenOrderTable.vue";
 import BattleCommandPopup from "@/components/main/battle/BattleCommandPopup.vue";
-import { translateELtoBF } from "@/plugins/EldenLangTranslator.js";
+
 export default {
   name: "Battle",
   components: {
@@ -49,28 +50,15 @@ export default {
   },
   data: function () {
     return {
-      writtenCode: "",
+      writtenCode: "Taurus Demon {\n\n}You Died.",
       compiledCode: "",
       dialog: false,
       open: false,
     };
   },
   methods: {
-    runCode: function () {
-      if (this.checkELValidation()) {
-        const parsedCode = this.parsedEL[1].toLowerCase();
-        const bFcode = translateELtoBF(parsedCode);
-        console.log(this.runBF(bFcode));
-        console.log(bFcode);
-        // this.translate(this.parsedEL[1]);
-        // console.log(this.translateELtoBF(this.parsedEL[1]));
-        // console.log(translateELtoBF("spam"));
-        // console.log(this.translateELtoBF(this.parsedEL[1]));
-        // this.runBF(this.parsedEL[1]);
-      }
-    },
-    runBF: function (code) {
-      let program = new Brainfuck(code);
+    runBF: function () {
+      let program = new Brainfuck(this.writtenCode);
       let output = "";
       program.write = function (charCode) {
         output += String.fromCharCode(charCode);
@@ -82,48 +70,10 @@ export default {
       this.compiledCode = output;
       return output;
     },
-    checkELValidation: function () {
-      if (this.parsedEL.length !== 3) {
-        // console.log(123);
-        return false;
-      }
-      // const starting = this.parsedEL[0].trim().toLowerCase();
-      const ending = this.parsedEL[2].trim().toLowerCase();
-      if (
-        ending !== "you died." &&
-        ending !== "enemy felled." &&
-        ending !== "great enemy felled."
-      ) {
-        return false;
-      }
-
-      let opens = false;
-      let closes = false;
-      for (let char in this.writtenCode) {
-        if (char === "{") {
-          if (opens === true || closes === true) {
-            return false;
-          }
-          opens = true;
-        } else if (char === "}") {
-          if (!opens || closes) {
-            return false;
-          }
-          closes = true;
-        }
-      }
-      return true;
-    },
   },
   watch: {
     writtenCode: function () {
-      this.runCode();
-    },
-  },
-  computed: {
-    parsedEL: function () {
-      const parsedEldenLan = this.writtenCode.split(/[{,}]/);
-      return parsedEldenLan;
+      console.log(this.runBF());
     },
   },
 };
