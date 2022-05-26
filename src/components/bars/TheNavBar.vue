@@ -24,6 +24,7 @@
       <v-spacer />
       <v-btn
         text
+        @click="scrollToTop('Battle')"
         :to="{ name: 'Battle' }"
         style="font-family: Cinzel; font-size: 20px"
         >Battle</v-btn
@@ -32,6 +33,7 @@
         text
         :to="{ name: 'GoldenOrder' }"
         style="font-family: Cinzel; font-size: 20px"
+        @click="scrollToTop('GoldenOrder')"
         >The Golden Order</v-btn
       >
     </v-app-bar>
@@ -42,6 +44,13 @@
 export default {
   name: "TheNavBar",
   data: () => ({}),
+  methods: {
+    scrollToTop: function (routeName) {
+      if (routeName === this.$route.name) {
+        window.scroll(0, 0);
+      }
+    },
+  },
 };
 </script>
 
