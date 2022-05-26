@@ -22,7 +22,12 @@ const routes = [
     name: "GoldenOrder",
     component: GoldenOrder,
   },
-
+  {
+    path: "*",
+    redirect: () => {
+      return { name: "Home" };
+    },
+  },
   // {
   //   path: '/about',
   //   name: 'About',
