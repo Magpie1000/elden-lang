@@ -39,16 +39,4 @@ const translateELtoBF = function (code) {
 //   return ELcode;
 // };
 
-// console.log(
-//   translateBFtoEL(
-//     "++++[++++>---<]>++.-[--->+<]>++.---------.++++++++.--[--->+<]>.-[---->+<]>++.++[->+++<]>.-.+++++++..-------.-.[->+++<]>++."
-//   )
-// );
-
-// console.log(
-//   translateELtoBF(
-//     "r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 spam roll r2 r2 r2 r2 r2 r2 r2 roll r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 roll r2 r2 r2 roll r2 r1 r1 r1 r1 jump panic roll r2 r2 guard roll r2 guard r2 r2 r2 r2 r2 r2 r2 guard guard r2 r2 r2 guard roll r2 r2 guard r1 r1 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 guard roll guard r2 r2 r2 guard jump jump jump jump jump jump guard jump jump jump jump jump jump jump jump guard roll r2 guard roll guard "
-//   )
-// );
-
 export { translateELtoBF };
