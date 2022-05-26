@@ -17,7 +17,7 @@
           text="COMMANDS"
         />
       </v-row>
-
+      <!-- TextFields -->
       <v-divider dark class="my-9 mx-15" />
       <v-row justify="center">
         <v-textarea
@@ -30,31 +30,45 @@
           v-model="writtenCode"
         ></v-textarea>
       </v-row>
-      <default-btn class="mb-15" text="run code" />
-      <battle-command-popup v-model="open">
-        <golden-order-table />
-      </battle-command-popup>
+      <!-- Btn: Run Code  -->
+      <default-btn @click.native="runCode()" class="mb-15" text="run code" />
     </v-container>
-    <v-dialog v-model="isCommandDialogShown" max-width="600">
-      <golden-order-table />
-    </v-dialog>
+    <!--dialogues -->
+    <!-- 1. Load Examples -->
     <v-dialog v-model="isExampleDialogShown" max-width="600">
       <battle-example-dialog
         :BattleScenarios="BattleScenarios"
         @clickLoadScenario="clickLoadScenario"
       />
     </v-dialog>
+    <!-- 2. Commands -->
+    <v-dialog v-model="isCommandDialogShown" max-width="600">
+      <golden-order-table />
+    </v-dialog>
+    <!-- 3. Code-Run Dialog -->
+    <v-dialog v-model="isCodeRunDialogShown" max-width="600">
+      <battle-code-run-dialog
+        :compiledCode="compiledCode"
+        :bfResult="bfResult"
+        :ending="ending"
+      />
+    </v-dialog>
+    <!-- Pop-up Command Sheet -->
+    <battle-command-popup v-model="open">
+      <golden-order-table />
+    </battle-command-popup>
   </div>
 </template>
 
 <script>
-import Brainfuck from "../../plugins/brainfuck.js";
 import DefaultBtn from "@/components/commons/DefaultBtn.vue";
 import GoldenOrderTable from "@/components/goldenOrder/GoldenOrderTable.vue";
 import BattleCommandPopup from "@/components/main/battle/BattleCommandPopup.vue";
 import BattleExampleDialog from "@/components/main/battle/BattleExampleDialog.vue";
+import BattleCodeRunDialog from "@/components/main/battle/BattleCodeRunDialog.vue";
 import { translateELtoBF } from "@/plugins/EldenLangTranslator.js";
 import BattleScenarios from "@/components/main/battle/BattleScenarios.js";
+import { bf } from "@/plugins/brainf.js";
 
 export default {
   name: "Battle",
@@ -63,13 +77,17 @@ export default {
     GoldenOrderTable,
     BattleCommandPopup,
     BattleExampleDialog,
+    BattleCodeRunDialog,
   },
   data: function () {
     return {
       writtenCode: "",
       compiledCode: "",
+      bfResult: "",
       isCommandDialogShown: false,
       isExampleDialogShown: false,
+      isCodeRunDialogShown: false,
+      ending: "",
       open: false,
       BattleScenarios: BattleScenarios,
     };
@@ -83,23 +101,13 @@ export default {
       if (this.checkELValidation()) {
         const parsedCode = this.parsedEL[1].toLowerCase();
         const bFcode = translateELtoBF(parsedCode);
-        console.log(this.runBF(bFcode));
-        console.log(bFcode);
+        this.compiledCode = bFcode;
+        this.bfResult = bf(bFcode);
+        this.ending = this.parsedEL[2].trim().toLowerCase();
+        this.isCodeRunDialogShown = true;
       }
     },
-    runBF: function (code) {
-      let program = new Brainfuck(code);
-      let output = "";
-      program.write = function (charCode) {
-        output += String.fromCharCode(charCode);
-      };
-      program.read = function () {
-        return String.charCodeAt(prompt("Input"), 0);
-      };
-      program.run();
-      this.compiledCode = output;
-      return output;
-    },
+
     checkELValidation: function () {
       if (this.parsedEL.length !== 3) {
         // message: you only want to have one curly brackets {}
