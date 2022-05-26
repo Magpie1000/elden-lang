@@ -136,6 +136,12 @@
           \npanic roll\n\n r2 r2 guard \n\n} ENEMY FELLED.`"
         />
       </v-row>
+      <v-row class="mt-15" justify="center">
+        <default-btn
+          @click.native="$goToBattle()"
+          text="Start Your own battle"
+        />
+      </v-row>
     </v-container>
   </div>
 </template>
@@ -143,17 +149,16 @@
 <script>
 import GoldenOrderTable from "@/components/goldenOrder/GoldenOrderTable.vue";
 import GoldenOrderCodeBlock from "@/components/goldenOrder/GoldenOrderCodeBlock.vue";
+import DefaultBtn from "@/components/commons/DefaultBtn.vue";
 
 export default {
   name: "GoldenOrder",
   components: {
     GoldenOrderTable,
     GoldenOrderCodeBlock,
+    DefaultBtn,
   },
   data: () => ({}),
-  created: function () {
-    console.log(this.$route.name);
-  },
 };
 </script>
 
