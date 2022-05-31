@@ -1,4 +1,4 @@
-# elden-lang
+# [elden-lang](https://elden.link) - check it out!
 
 ## Project setup
 ```
