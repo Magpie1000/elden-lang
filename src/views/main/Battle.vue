@@ -1,5 +1,5 @@
 <template>
-  <div class="Battle text-center" style="min-height: 120vh">
+  <div class="Battle text-center" style="min-height: 100vh">
     <v-container
       class="mt-10 pb-15"
       style="background-color: rgba(0, 0, 0, 0.8); border-radius: 1rem"
@@ -57,6 +57,8 @@
     <battle-command-popup v-model="open">
       <golden-order-table />
     </battle-command-popup>
+
+    <v-btn v-gamepad:button-a="pressed">{{ test_text }}</v-btn>
   </div>
 </template>
 
@@ -90,6 +92,7 @@ export default {
       ending: "",
       open: false,
       BattleScenarios: BattleScenarios,
+      text_text: "ㅁㄴㅇㅁㄴㅇ",
     };
   },
   methods: {
@@ -107,7 +110,9 @@ export default {
         this.isCodeRunDialogShown = true;
       }
     },
-
+    pressed: function () {
+      console.log("콘솔!");
+    },
     checkELValidation: function () {
       if (this.parsedEL.length !== 3) {
         // message: you only want to have one curly brackets {}
