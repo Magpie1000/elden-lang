@@ -7,7 +7,7 @@
     >
       <v-row class="justify-center align-self-center">
         <v-card-title
-          v-if="isLefty"
+          v-if="isLefty || $vuetify.breakpoint.name === `xs`"
           v-html="parsedTitle"
           class="mr-10"
           style="font-size: 40px"
@@ -15,7 +15,7 @@
         </v-card-title>
         <v-card min-height="200" min-width="300" :img="imgUrl"></v-card>
         <v-card-title
-          v-if="!isLefty"
+          v-if="!isLefty && $vuetify.breakpoint.name !== `xs`"
           v-html="parsedTitle"
           class="mr-10"
           style="font-size: 40px"

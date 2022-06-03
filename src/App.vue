@@ -31,12 +31,13 @@ export default {
 #app {
   background-color: #272727 !important;
   font-family: "Cinzel", serif;
+  word-break: keep-all;
   /* line-height: 70%; */
 }
 
 .title-text {
   font-family: "Cinzel";
-  font-size: 80px !important;
+  font-size: 60px !important;
   font-weight: 600 !important;
   color: #dcbf72 !important;
 }

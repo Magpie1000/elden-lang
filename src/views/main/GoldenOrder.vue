@@ -4,7 +4,7 @@
       class="mt-10 pb-15"
       style="background-color: rgba(0, 0, 0, 0.8); border-radius: 1rem"
     >
-      <h1 class="title-text pt-10 mt-15">The Golden Order</h1>
+      <h1 class="title-text pt-10">The Golden Order</h1>
       <h2 class="subtitle-text">a.k.a documentation</h2>
       <v-divider dark class="my-9 mx-15" />
 
@@ -164,12 +164,12 @@ export default {
 
 <style scoped>
 .subtitle-text {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 600;
 }
 
 .heading-text {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 600;
   color: aliceblue;
 }

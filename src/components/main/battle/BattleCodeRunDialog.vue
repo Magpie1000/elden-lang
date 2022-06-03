@@ -7,11 +7,12 @@
       color: aliceblue;
     "
   >
-    <v-row justify="center">
+    <v-row v-if="!isBattleFinished" justify="center">
       <v-card-title class="my-10" style="font-size: 30px">Battle</v-card-title>
     </v-row>
-    <v-row justify="center">
+    <v-row v-if="!isBattleFinished" justify="center">
       <v-card
+        v-if="!isBattleFinished"
         :img="imgUrl"
         min-height="300"
         min-width="400"
@@ -22,7 +23,7 @@
         "
       />
     </v-row>
-    <v-row class="mt-10 my-5" justify="center">
+    <v-row v-if="!isBattleFinished" class="my-10 mb-15" justify="center">
       <v-progress-linear
         color="white"
         class="mx-15"
@@ -30,11 +31,15 @@
         :value="progression"
       />
     </v-row>
-    <v-divider dark class="my-9 mx-2" />
-    <v-row justify="center">
+    <!-- <v-divider v-if="!isBattleFinished" dark class="my-9 mx-2" /> -->
+    <v-row v-if="isBattleFinished" class="my-9 mx-2" justify="center">
       <v-card-title style="font-size: 30px">Result</v-card-title>
     </v-row>
-    <golden-order-code-block class="ma-5 mb-15" :text="bfResult" />
+    <golden-order-code-block
+      v-if="isBattleFinished"
+      class="ma-5 mb-15"
+      :text="bfResult"
+    />
   </v-card>
 </template>
 
@@ -72,6 +77,7 @@ export default {
     lastMove: null,
     currentFrame: 0,
     finalFrame: 0,
+    isBattleFinished: false,
   }),
   methods: {
     changeImg: function () {
@@ -89,9 +95,10 @@ export default {
       this.lastMove = syl;
       this.currentFrame++;
       this.progression = (this.currentFrame / this.finalFrame) * 100;
-      setTimeout(this.changeImg, 150);
+      setTimeout(this.changeImg, 100);
     },
     endBattle: function () {
+      this.isBattleFinished = true;
       switch (this.ending) {
         case "enemy felled.":
           this.imgUrl =
@@ -111,12 +118,14 @@ export default {
     compiledCode() {
       this.finalFrame = this.compiledCode.length;
       this.currentFrame = 0;
+      this.isBattleFinished = false;
       this.changeImg();
     },
   },
   mounted() {
     this.finalFrame = this.compiledCode.length;
     this.currentFrame = 0;
+    this.isBattleFinished = false;
     this.changeImg();
   },
   // updated() {

@@ -4,7 +4,7 @@
       class="mt-10 pb-15"
       style="background-color: rgba(0, 0, 0, 0.8); border-radius: 1rem"
     >
-      <h1 class="title-text pt-10 mt-15">The Battle</h1>
+      <h1 class="title-text pt-10">The Battle</h1>
       <h2 class="subtitle-text">a.k.a code</h2>
       <v-row class="my-10" justify="center">
         <default-btn
@@ -57,8 +57,6 @@
     <battle-command-popup v-model="open">
       <golden-order-table />
     </battle-command-popup>
-
-    <v-btn v-gamepad:button-a="pressed">{{ test_text }}</v-btn>
   </div>
 </template>
 
@@ -111,6 +109,7 @@ export default {
       }
     },
     pressed: function () {
+      this.writtenCode += "콘솔!";
       console.log("콘솔!");
     },
     checkELValidation: function () {
@@ -159,11 +158,17 @@ export default {
     window.scrollTo(0, 0);
   },
 };
+
+// var ButtonNames = ['button-a', 'button-b',
+// 'button-x', 'button-y', 'shoulder-left', 'shoulder-right',
+// 'trigger-left', 'trigger-right', 'button-select', 'button-start',
+// 'left-stick-in', 'right-stick-in', 'button-dpad-up', 'button-dpad-down', 'button-dpad-left',
+// 'button-dpad-right', 'vendor'];
 </script>
 
 <style scoped>
 .subtitle-text {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 600;
 }
 
