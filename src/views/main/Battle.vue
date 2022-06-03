@@ -17,9 +17,18 @@
           text="COMMANDS"
         />
       </v-row>
+
       <!-- TextFields -->
       <v-divider dark class="my-9 mx-15" />
       <v-row justify="center">
+        <div v-gamepad:button-a="pressedA" />
+        <div v-gamepad:button-b="pressedB" />
+        <div v-gamepad:button-x="pressedX" />
+        <div v-gamepad:button-y="pressedY" />
+        <div v-gamepad:trigger-right="pressedR2" />
+        <div v-gamepad:trigger-left="pressedL2" />
+        <div v-gamepad:shoulder-left="pressedR1" />
+        <div v-gamepad:shoulder-right="pressedL1" />
         <v-textarea
           style="font-size: 27px; max-width: 800px"
           rows="25"
@@ -93,6 +102,12 @@ export default {
       text_text: "ㅁㄴㅇㅁㄴㅇ",
     };
   },
+
+  // var ButtonNames = ['button-a', 'button-b', // 'button-x', 'button-y',
+  // 'shoulder-left', 'shoulder-right', 'trigger-left', 'trigger-right',
+  // 'button-select', 'button-start', 'left-stick-in', 'right-stick-in',
+  // 'button-dpad-up', 'button-dpad-down', 'button-dpad-left',
+  // 'button-dpad-right', 'vendor'];
   methods: {
     clickLoadScenario: function (index) {
       this.isExampleDialogShown = false;
@@ -108,10 +123,39 @@ export default {
         this.isCodeRunDialogShown = true;
       }
     },
-    pressed: function () {
-      this.writtenCode += "콘솔!";
+    pressedA: function () {
+      this.writtenCode += "jump ";
       console.log("콘솔!");
     },
+    pressedB: function () {
+      this.writtenCode += "roll ";
+      console.log("콘솔!");
+    },
+    pressedX: function () {
+      this.writtenCode += "spam";
+      console.log("콘솔!");
+    },
+    pressedY: function () {
+      this.writtenCode += "panic";
+      console.log("콘솔!");
+    },
+    pressedR1: function () {
+      this.writtenCode += "R1 ";
+      console.log("콘솔!");
+    },
+    pressedR2: function () {
+      this.writtenCode += "R2 ";
+      console.log("콘솔!");
+    },
+    pressedL1: function () {
+      this.writtenCode += "guard ";
+      console.log("콘솔!");
+    },
+    pressedL2: function () {
+      this.writtenCode += "parry ";
+      console.log("콘솔!");
+    },
+
     checkELValidation: function () {
       if (this.parsedEL.length !== 3) {
         // message: you only want to have one curly brackets {}
