@@ -16,7 +16,7 @@
       </v-card-text>
       <v-card-actions class="justify-center pt-8">
         <default-btn
-          class="mr-10"
+          class="mr-5"
           @click.native="$goToBattle()"
           text="Epic boss battle<br />(Code)"
         />
@@ -66,9 +66,11 @@
             'Elden-Lang'.
           </v-card-title>
         </v-row>
-        <v-btn x-large class="align-self-center mt-15 mb-10"
-          >Fight Against demigods</v-btn
-        >
+        <default-btn
+          class="mt-15 mb-10"
+          @click.native="$goToGoldenOrder()"
+          text="Fight Against enemies"
+        />
       </v-card>
     </div>
   </div>

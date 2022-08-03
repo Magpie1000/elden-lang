@@ -1,10 +1,10 @@
 <template>
-  <div class="Battle text-center" style="min-height: 120vh">
+  <div class="Battle text-center" style="min-height: 100vh">
     <v-container
       class="mt-10 pb-15"
       style="background-color: rgba(0, 0, 0, 0.8); border-radius: 1rem"
     >
-      <h1 class="title-text pt-10 mt-15">The Battle</h1>
+      <h1 class="title-text pt-10">The Battle</h1>
       <h2 class="subtitle-text">a.k.a code</h2>
       <v-row class="my-10" justify="center">
         <default-btn
@@ -17,9 +17,18 @@
           text="COMMANDS"
         />
       </v-row>
+
       <!-- TextFields -->
       <v-divider dark class="my-9 mx-15" />
       <v-row justify="center">
+        <div v-gamepad:button-a="pressedA" />
+        <div v-gamepad:button-b="pressedB" />
+        <div v-gamepad:button-x="pressedX" />
+        <div v-gamepad:button-y="pressedY" />
+        <div v-gamepad:trigger-right="pressedR2" />
+        <div v-gamepad:trigger-left="pressedL2" />
+        <div v-gamepad:shoulder-left="pressedR1" />
+        <div v-gamepad:shoulder-right="pressedL1" />
         <v-textarea
           style="font-size: 27px; max-width: 800px"
           rows="25"
@@ -90,8 +99,15 @@ export default {
       ending: "",
       open: false,
       BattleScenarios: BattleScenarios,
+      text_text: "ㅁㄴㅇㅁㄴㅇ",
     };
   },
+
+  // var ButtonNames = ['button-a', 'button-b', // 'button-x', 'button-y',
+  // 'shoulder-left', 'shoulder-right', 'trigger-left', 'trigger-right',
+  // 'button-select', 'button-start', 'left-stick-in', 'right-stick-in',
+  // 'button-dpad-up', 'button-dpad-down', 'button-dpad-left',
+  // 'button-dpad-right', 'vendor'];
   methods: {
     clickLoadScenario: function (index) {
       this.isExampleDialogShown = false;
@@ -106,6 +122,38 @@ export default {
         this.ending = this.parsedEL[2].trim().toLowerCase();
         this.isCodeRunDialogShown = true;
       }
+    },
+    pressedA: function () {
+      this.writtenCode += "jump ";
+      console.log("콘솔!");
+    },
+    pressedB: function () {
+      this.writtenCode += "roll ";
+      console.log("콘솔!");
+    },
+    pressedX: function () {
+      this.writtenCode += "spam";
+      console.log("콘솔!");
+    },
+    pressedY: function () {
+      this.writtenCode += "panic";
+      console.log("콘솔!");
+    },
+    pressedR1: function () {
+      this.writtenCode += "R1 ";
+      console.log("콘솔!");
+    },
+    pressedR2: function () {
+      this.writtenCode += "R2 ";
+      console.log("콘솔!");
+    },
+    pressedL1: function () {
+      this.writtenCode += "guard ";
+      console.log("콘솔!");
+    },
+    pressedL2: function () {
+      this.writtenCode += "parry ";
+      console.log("콘솔!");
     },
 
     checkELValidation: function () {
@@ -154,11 +202,17 @@ export default {
     window.scrollTo(0, 0);
   },
 };
+
+// var ButtonNames = ['button-a', 'button-b',
+// 'button-x', 'button-y', 'shoulder-left', 'shoulder-right',
+// 'trigger-left', 'trigger-right', 'button-select', 'button-start',
+// 'left-stick-in', 'right-stick-in', 'button-dpad-up', 'button-dpad-down', 'button-dpad-left',
+// 'button-dpad-right', 'vendor'];
 </script>
 
 <style scoped>
 .subtitle-text {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 600;
 }
 
